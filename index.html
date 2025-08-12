@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HIITimer</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="hiitfavicon.png">
+
 </head>
 <body>
     <div class="container glass">
@@ -13,18 +16,29 @@
         
         <div class="timer-row">
             <div id="timer">0:00</div>
-            <button id="pause" class="glass-button small">Pause</button>
+            <button id="pause" class="glass-button small">
+                ⏸
+            </button>
         </div>
 
         <div class="buttons">
-            <button id="slow" class="glass-button green">Slow</button>
-            <button id="mod" class="glass-button orange">Mod.</button>
+            <button id="slow" class="glass-button blue">Slow</button>
+            <button id="mod" class="glass-button purple">Mod.</button>
             <button id="fast" class="glass-button red">Fast</button>
         </div>
 
         <div class="options">
             <button id="customize" class="glass-button">Customize Times</button>
             <button id="reset" class="glass-button">Reset</button>
+        </div>
+
+        <!-- Hidden customization panel -->
+        <div id="custom-panel" class="glass hidden">
+            <h2>Set Times (seconds)</h2>
+            <label>Slow: <input type="number" id="slow-time"></label><br>
+            <label>Mod.: <input type="number" id="mod-time"></label><br>
+            <label>Fast: <input type="number" id="fast-time"></label><br>
+            <button id="save-times" class="glass-button">Save</button>
         </div>
     </div>
 

@@ -2,11 +2,11 @@ body {
     background: black;
     background-size: cover;
     color: white;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     text-align: center;
     margin: 0;
     padding: 20px;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s ease;
 }
 
 .container {
@@ -24,8 +24,14 @@ body {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
+.hidden {
+    display: none;
+}
+
 h1 {
     margin: 10px 0;
+    font-size: 40px;
+    letter-spacing: 2px;
 }
 
 .subtitle {
@@ -69,11 +75,12 @@ h1 {
     transform: scale(0.95);
 }
 
-.green { background: rgba(0, 128, 0, 0.4); }
-.orange { background: rgba(255, 165, 0, 0.4); }
-.red { background: rgba(255, 0, 0, 0.4); }
-
 .small {
-    font-size: 14px;
+    font-size: 20px;
     padding: 8px 15px;
 }
+
+/* Gradients */
+.blue { background: linear-gradient(145deg, #001f3f, #003366); }
+.purple { background: linear-gradient(145deg, #2e0854, #4B0082); }
+.red { background: linear-gradient(145deg, #5b0000, #8B0000); }
