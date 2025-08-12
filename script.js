@@ -1,6 +1,8 @@
 let timeRemaining = 0;
 let timerInterval = null;
+let isPaused = false;
 const timerDisplay = document.getElementById("timer");
+const pauseButton = document.getElementById("pause");
 
 const updateDisplay = () => {
     let minutes = Math.floor(timeRemaining / 60);
@@ -10,32 +12,42 @@ const updateDisplay = () => {
 
 const startTimer = (seconds, color) => {
     timeRemaining += seconds;
-    document.body.style.background = color;
+    document.body.style.backgroundColor = color;
 
     if (!timerInterval) {
         timerInterval = setInterval(() => {
-            if (timeRemaining > 0) {
-                timeRemaining--;
-                updateDisplay();
-            } else {
-                clearInterval(timerInterval);
-                timerInterval = null;
-                document.body.style.background = "black";
+            if (!isPaused) {
+                if (timeRemaining > 0) {
+                    timeRemaining--;
+                    updateDisplay();
+                } else {
+                    clearInterval(timerInterval);
+                    timerInterval = null;
+                    document.body.style.backgroundColor = "black";
+                }
             }
         }, 1000);
     }
+    updateDisplay();
 };
 
 document.getElementById("slow").addEventListener("click", () => startTimer(60, "green"));
-document.getElementById("mod").addEventListener("click", () => startTimer(120, "orange"));
-document.getElementById("fast").addEventListener("click", () => startTimer(180, "red"));
+document.getElementById("mod").addEventListener("click", () => startTimer(90, "orange"));
+document.getElementById("fast").addEventListener("click", () => startTimer(30, "red"));
+
+pauseButton.addEventListener("click", () => {
+    isPaused = !isPaused;
+    pauseButton.textContent = isPaused ? "Resume" : "Pause";
+});
 
 document.getElementById("reset").addEventListener("click", () => {
     timeRemaining = 0;
     updateDisplay();
     clearInterval(timerInterval);
     timerInterval = null;
-    document.body.style.background = "black";
+    document.body.style.backgroundColor = "black";
+    isPaused = false;
+    pauseButton.textContent = "Pause";
 });
 
 updateDisplay();

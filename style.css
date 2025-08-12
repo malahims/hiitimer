@@ -1,23 +1,79 @@
 body {
     background: black;
+    background-size: cover;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     text-align: center;
     margin: 0;
     padding: 20px;
+    transition: background-color 0.3s ease;
 }
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    margin: 10px 0;
+}
+
+.subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.timer-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
 #timer {
     font-size: 60px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
     margin: 20px 0;
 }
-button {
-    padding: 15px 25px;
+
+.glass-button {
+    padding: 12px 20px;
     font-size: 18px;
-    margin: 5px;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
+    color: white;
     cursor: pointer;
+    transition: transform 0.1s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
-#slow { background: green; color: white; }
-#mod { background: orange; color: white; }
-#fast { background: red; color: white; }
+
+.glass-button:active {
+    transform: scale(0.95);
+}
+
+.green { background: rgba(0, 128, 0, 0.4); }
+.orange { background: rgba(255, 165, 0, 0.4); }
+.red { background: rgba(255, 0, 0, 0.4); }
+
+.small {
+    font-size: 14px;
+    padding: 8px 15px;
+}
