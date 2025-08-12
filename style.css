@@ -1,0 +1,23 @@
+body {
+    background: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+#timer {
+    font-size: 60px;
+    margin: 20px 0;
+}
+button {
+    padding: 15px 25px;
+    font-size: 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#slow { background: green; color: white; }
+#mod { background: orange; color: white; }
+#fast { background: red; color: white; }
